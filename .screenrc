@@ -1,0 +1,18 @@
+# General settings
+startup_message off
+defscrollback 5000
+shelltitle sterling
+
+# Colors
+term screen-256color
+
+# Statusline
+hardstatus alwayslastline
+hardstatus string '%{= kr}[%{= kw}screen%{= kc} | %{= kw}%H%?%1`%?%{= kr}] [%=%{= kw}%-w%{= kr}[%{= kc}%n%{= kr}]%{= kw}%t%?(%u)%?%+w%=%{= kr}] [%{= kw}%m/%d %c:%s%{= kr}]'
+
+# Keys binding
+bindkey "^[[1;3D" focus left
+bindkey "^[[1;3C" focus right
+bindkey "^[[1;3A" focus up
+bindkey "^[[1;3B" focus down
+bindkey "^[[1;78"
