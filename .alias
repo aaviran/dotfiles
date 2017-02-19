@@ -1,0 +1,20 @@
+## .alias - General purpose aliases
+
+## Overrride defaults
+alias grep='grep --color'
+alias ag='ag --color'
+alias tag='tag --color'
+alias ls='ls --color=auto'
+alias vi='vim'
+alias tree='tree -C'
+alias less='less --RAW-CONTROL-CHARS'
+alias rg='rg -p'
+
+## ls
+alias ll='ls --almost-all --classify -l --human-readable'
+alias lt='ll -t --reverse'
+
+## Misc.
+alias subl='subl3'
+alias sz="source ${HOME}/.zshrc"
+alias mirrors='sudo reflector --verbose -l 200 --sort rate --save /etc/pacman.d/mirrorlist && sudo rm -f /etc/pacman.d/mirrorlist.pacnew'
