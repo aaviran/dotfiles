@@ -3,6 +3,7 @@
 ## Initial settings and variabls
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
+autoload -Uz select-word-style && select-word-style bash
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 ALIAS_PATH="${DOTFILES_DIR}/.alias"
