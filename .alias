@@ -15,6 +15,5 @@ alias ll='ls --almost-all --classify -l --human-readable'
 alias lt='ll -t --reverse'
 
 ## Misc.
-alias subl='subl3'
 alias sz="source ${HOME}/.zshrc"
 alias mirrors='sudo reflector --verbose -l 200 --sort rate --save /etc/pacman.d/mirrorlist && sudo rm -f /etc/pacman.d/mirrorlist.pacnew'
