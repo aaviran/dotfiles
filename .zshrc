@@ -10,6 +10,8 @@ ALIAS_PATH="${DOTFILES_DIR}/.alias"
 ENV_ALIAS_PATH="${DOTFILES_DIR}/.alias.env"
 ZSH_ALIAS_PATH="${DOTFILES_DIR}/.alias.zsh"
 ZSH_GIT_PROMPT_DIR="${HOME}/dev/external/zsh-git-prompt"
+ZSH_AUTOSUGGESTIONS_DIR="${HOME}/dev/external/zsh-autosuggestions"
+ZSH_SYNTAX_HIGHLIGHTING_DIR="${HOME}/dev/external/zsh-syntax-highlighting"
 ZSH_KEYBIND_PATH="${DOTFILES_DIR}/.keybind.zsh"
 DIRCOLORS_PATH=/usr/bin/dircolors
 
@@ -112,5 +114,9 @@ setopt notify
 [[ -f "$ALIAS_PATH" ]] && source "$ALIAS_PATH"
 [[ -f "$ENV_ALIAS_PATH" ]] && source "$ENV_ALIAS_PATH"
 [[ -f "$ZSH_ALIAS_PATH" ]] && source "$ZSH_ALIAS_PATH"
+
+## Plugins
+[[ -f "${ZSH_AUTOSUGGESTIONS_DIR}/zsh-autosuggestions.zsh" ]] && source "${ZSH_AUTOSUGGESTIONS_DIR}/zsh-autosuggestions.zsh"
+[[ -f "${ZSH_SYNTAX_HIGHLIGHTING_DIR}/zsh-syntax-highlighting.zsh" ]] && source "${ZSH_SYNTAX_HIGHLIGHTING_DIR}/zsh-syntax-highlighting.zsh"
 
 [[ -o interactive ]] && cowsay -f "$(cowsay -l | grep -v 'Cow files' | tr ' ' '\n' | shuf -n1)" "$(fortune)"
