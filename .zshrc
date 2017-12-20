@@ -61,13 +61,6 @@ if [[ -d "$ZSH_GIT_PROMPT_DIR" ]]; then
   RPROMPT="${RPROMPT}\$(git_super_status)"
 fi
 
-# tag-ag configuration
-export TAG_ALIAS_PREFIX="tag"
-export TAG_CMD_FMT_STRING='subl {{.Filename}}:{{.LineNumber}}'
-if (( $+commands[tag] )); then
-  tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null; }
-fi
-
 # Fast ssh-add
 function sshadd {
   local SSH_PATH="${HOME}/.ssh"
