@@ -5,7 +5,7 @@ autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz select-word-style && select-word-style bash
 
-DOTFILES_DIR="${HOME}/.dotfiles"
+DOTFILES_DIR="${HOME}/dotfiles"
 ALIAS_PATH="${DOTFILES_DIR}/.alias"
 ENV_ALIAS_PATH="${DOTFILES_DIR}/.alias.env"
 ZSH_ALIAS_PATH="${DOTFILES_DIR}/.alias.zsh"
@@ -14,6 +14,7 @@ ZSH_AUTOSUGGESTIONS_DIR="${HOME}/dev/external/zsh-autosuggestions"
 ZSH_SYNTAX_HIGHLIGHTING_DIR="${HOME}/dev/external/zsh-syntax-highlighting"
 ZSH_KEYBIND_PATH="${DOTFILES_DIR}/.keybind.zsh"
 DIRCOLORS_PATH=/usr/bin/dircolors
+COWFILES_PATH="${HOME}/dev/external/cowsay-files/cows"
 
 export EDITOR="vim"
 export VISUAL="vim"
@@ -24,7 +25,10 @@ export GOPATH="${HOME}/dev/go"
 export PATH="${PATH}:${GOPATH}/bin"
 export GPG_TTY
 GPG_TTY=$(tty)
-export COWPATH="/usr/share/cows:/home/ari/dev/external/cowsay-files/cows"
+
+if [[ -d "$COWFILES_PATH" ]]; then
+  export COWPATH="/usr/share/cows:${COWFILES_PATH}"
+fi
 
 # less colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
