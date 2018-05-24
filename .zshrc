@@ -88,7 +88,7 @@ zstyle ":completion:*" rehash true
 zstyle ":completion:*" squeeze-slashes true
 zstyle ":completion:*:functions" ignore-patterns "_*"
 zstyle ":completion:*:cd:*" ignore-parents parent pwd
-zstyle :compinstall filename "/home/ari/.zshrc"
+zstyle :compinstall filename "${HOME}/.zshrc"
 
 ## History
 HISTFILE="${HOME}/.histfile"
