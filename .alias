@@ -9,6 +9,7 @@ alias vi='vim'
 alias tree='tree -C'
 alias less='less --RAW-CONTROL-CHARS'
 alias rg='rg -p'
+alias ip='ip -c'
 
 ## ls
 alias ll='ls --almost-all --classify -l --human-readable'
