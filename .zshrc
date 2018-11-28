@@ -10,8 +10,8 @@ ALIAS_PATH="${DOTFILES_DIR}/.alias"
 ENV_ALIAS_PATH="${DOTFILES_DIR}/.alias.env"
 ZSH_ALIAS_PATH="${DOTFILES_DIR}/.alias.zsh"
 ZSH_GIT_PROMPT_DIR="${HOME}/dev/external/zsh-git-prompt"
-ZSH_AUTOSUGGESTIONS_DIR="${HOME}/dev/external/zsh-autosuggestions"
-ZSH_SYNTAX_HIGHLIGHTING_DIR="${HOME}/dev/external/zsh-syntax-highlighting"
+ZSH_AUTOSUGGESTIONS_DIR="/usr/share/zsh/plugins/zsh-autosuggestions"
+ZSH_SYNTAX_HIGHLIGHTING_DIR="/usr/share/zsh/plugins//zsh-syntax-highlighting"
 ZSH_KEYBIND_PATH="${DOTFILES_DIR}/.keybind.zsh"
 DIRCOLORS_PATH=/usr/bin/dircolors
 COWFILES_PATH="${HOME}/dev/external/cowsay-files/cows"
@@ -48,7 +48,9 @@ RPROMPT="%(?..%{$fg_bold[red]%}[%{$fg_bold[yellow]%}%? %{$fg_bold[white]%}:/%{$f
 
 # Git prompt
 if [[ -d "$ZSH_GIT_PROMPT_DIR" ]]; then
-  GIT_PROMPT_EXECUTABLE="haskell"
+  if [[ -f "${ZSH_GIT_PROMPT_DIR}/src/.bin/gitstatus" ]]; then
+    GIT_PROMPT_EXECUTABLE="haskell"
+  fi
   source "${ZSH_GIT_PROMPT_DIR}/zshrc.sh"
 
   ZSH_THEME_GIT_PROMPT_PREFIX=" %{${fg_bold[red]}%}["
