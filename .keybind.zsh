@@ -28,6 +28,8 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Right]}"      ]]  && bindkey  "${key[Right]}"       forward-char
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
+bindkey '[C' forward-word
+bindkey '[D' backward-word
 bindkey ' ' magic-space
 
 # start typing + [Up-Arrow] - fuzzy find history forward

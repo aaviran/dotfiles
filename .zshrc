@@ -5,13 +5,14 @@ autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz select-word-style && select-word-style bash
 
+
 DOTFILES_DIR="${HOME}/dotfiles"
 ALIAS_PATH="${DOTFILES_DIR}/.alias"
 ENV_ALIAS_PATH="${DOTFILES_DIR}/.alias.env"
 ZSH_ALIAS_PATH="${DOTFILES_DIR}/.alias.zsh"
 ZSH_GIT_PROMPT_DIR="${HOME}/dev/external/zsh-git-prompt"
-ZSH_AUTOSUGGESTIONS_DIR="/usr/share/zsh/plugins/zsh-autosuggestions"
-ZSH_SYNTAX_HIGHLIGHTING_DIR="/usr/share/zsh/plugins//zsh-syntax-highlighting"
+ZSH_AUTOSUGGESTIONS_DIR="/usr/local/share/zsh-autosuggestions"
+ZSH_SYNTAX_HIGHLIGHTING_DIR="/usr/local/share/zsh-syntax-highlighting"
 ZSH_KEYBIND_PATH="${DOTFILES_DIR}/.keybind.zsh"
 DIRCOLORS_PATH=/usr/bin/dircolors
 COWFILES_PATH="${HOME}/dev/external/cowsay-files/cows"
@@ -22,7 +23,7 @@ export PAGER="less"
 export BROWSER="google-chrome-unstable"
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 export GOPATH="${HOME}/dev/go"
-export PATH="${PATH}:${GOPATH}/bin"
+export PATH="${PATH}:${GOPATH}/bin:${HOME}/bin"
 export GPG_TTY
 GPG_TTY=$(tty)
 
@@ -63,7 +64,7 @@ if [[ -d "$ZSH_GIT_PROMPT_DIR" ]]; then
   ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
   ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
   ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[blue]%}%{U%G%}"
-  ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}¯\_(ツ%)_/¯"
+  ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}🤷"
   RPROMPT="${RPROMPT}\$(git_super_status)"
 fi
 
