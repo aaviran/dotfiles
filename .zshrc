@@ -11,8 +11,9 @@ ALIAS_PATH="${DOTFILES_DIR}/.alias"
 ENV_ALIAS_PATH="${DOTFILES_DIR}/.alias.env"
 ZSH_ALIAS_PATH="${DOTFILES_DIR}/.alias.zsh"
 ZSH_GIT_PROMPT_DIR="${HOME}/dev/external/zsh-git-prompt"
-ZSH_AUTOSUGGESTIONS_DIR="/usr/local/share/zsh-autosuggestions"
-ZSH_SYNTAX_HIGHLIGHTING_DIR="/usr/local/share/zsh-syntax-highlighting"
+ZSH_AUTOSUGGESTIONS_DIR="/opt/homebrew/share/zsh-autosuggestions"
+ZSH_SYNTAX_HIGHLIGHTING_DIR="/opt/homebrew/share/zsh-syntax-highlighting"
+ZSH_YARN_AUTOCOMPLETIONS_DIR="/Users/aaviran/zsh-plugins/yarn-autocompletions"
 ZSH_KEYBIND_PATH="${DOTFILES_DIR}/.keybind.zsh"
 DIRCOLORS_PATH=/usr/bin/dircolors
 COWFILES_PATH="${HOME}/dev/external/cowsay-files/cows"
@@ -118,5 +119,10 @@ setopt notify
 ## Plugins
 [[ -f "${ZSH_AUTOSUGGESTIONS_DIR}/zsh-autosuggestions.zsh" ]] && source "${ZSH_AUTOSUGGESTIONS_DIR}/zsh-autosuggestions.zsh"
 [[ -f "${ZSH_SYNTAX_HIGHLIGHTING_DIR}/zsh-syntax-highlighting.zsh" ]] && source "${ZSH_SYNTAX_HIGHLIGHTING_DIR}/zsh-syntax-highlighting.zsh"
+[[ -f "${ZSH_YARN_AUTOCOMPLETIONS_DIR}/yarn-autocompletions.plugin.zsh" ]] && source "${ZSH_YARN_AUTOCOMPLETIONS_DIR}/yarn-autocompletions.plugin.zsh"
 
 [[ -o interactive ]] && cowsay -f "$(cowsay -l | grep -v 'Cow files' | tr ' ' '\n' | shuf -n1)" "$(fortune)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
