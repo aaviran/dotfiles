@@ -4,7 +4,7 @@
 alias grep='grep --color'
 alias ag='ag --color'
 alias tag='tag --color'
-alias ls='ls --color=always'
+alias ls='gls --color=always'
 alias vi='vim'
 alias tree='tree -C'
 alias less='less --RAW-CONTROL-CHARS'
